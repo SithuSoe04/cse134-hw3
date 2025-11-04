@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
   <title>Experience</title>
   <style>
     highlight-box {
@@ -17,13 +18,16 @@
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+    <nav class="site-nav">
+      <div class="nav-left">
+        <a href="index.html">SS</a>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger" aria-label="Toggle menu"></label>
+      <ul class="nav-right">
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
+        <li><a href="experience.html" class="active">Experience</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="experiments.html">Experiments</a></li>
       </ul>
     </nav>
   </header>
@@ -31,9 +35,24 @@
     <h1>Experience</h1>
     <section>
       <highlight-box>
-        <p>School: <span>University of California, San Diego</span></p>
-        <p>Major: Mathematics - Computer Science</p>
-        <p>Expected Graduation: June 2026</p>
+        <section>
+          <div>
+            <p>School: University of California, San Diego</p>
+            <p>Major: Mathematics - Computer Science</p>
+            <p>Expected Graduation: June 2026</p>
+          </div>
+          <!-- <img src="/assets/ucsdlogo.png" alt="UCSD Logo" width="100" class="logo"> -->
+          <picture>
+            <source media="(max-width: 600px)" srcset="/assets/ucsdlogo-small.webp" type="image/webp">
+            <source srcset="/assets/ucsdlogo.webp" type="image/webp">
+            <img 
+              src="/assets/ucsdlogo.png" 
+              alt="UCSD Logo"
+              loading="lazy" 
+              style="object-fit: cover; object-position: center; border-radius: 8px; max-width: 150px; height: auto;"
+            >
+        </picture>
+        </section>
         <label for="ts">Graduation Progress</label>
         <progress id="ts" value="77" max="100">77%</progress>
       </highlight-box>
